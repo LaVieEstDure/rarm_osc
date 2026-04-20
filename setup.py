@@ -1,11 +1,11 @@
-from setuptools import find_packages, setup
+from setuptools import setup
 
 package_name = 'rarm_osc'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'osc_node = rarm_osc.osc_node:main',
         ],
     },
 )
